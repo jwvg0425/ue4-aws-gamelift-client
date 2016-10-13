@@ -1,0 +1,22 @@
+{
+	"FileVersion" : 3,
+	
+	"FriendlyName" : "AWS GameLift Plugin",
+	"Vesion" : 1,
+	"FriendlyVersion" : "0.1",
+	"Description" : "AWS GameLift SDK Plugin",
+	"Category" : "AWS",
+	"CreatedBy" : "jwvg0425",
+	"EnabledByDefault" : true,
+
+	"Modules" :
+	[
+		{
+			"Name" : "gamelift",
+			"Type" : "Runtime",
+			"LoadingPhase" : "PreDefault"
+		}
+	],
+
+	"CanContainContent" : true
+}
