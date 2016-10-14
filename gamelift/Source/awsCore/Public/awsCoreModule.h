@@ -3,6 +3,7 @@
 #include "ModuleManager.h"
 
 #include "aws/core/Aws.h"
+#include "aws/core/auth/AWSCredentialsProvider.h"
 #include "aws/core/client/ClientConfiguration.h"
 #include "aws/core/utils/Outcome.h"
 
