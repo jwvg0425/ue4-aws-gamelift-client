@@ -66,3 +66,7 @@ Binaries/Win64/*
 !Binaries/Win64/aws-cpp-sdk-gamelift.dll
 !Binaries/Win64/aws-cpp-sdk-gamelift.lib
 !Binaries/Win64/aws-cpp-sdk-gamelift.pdb
+
+!Binaries/Win64/aws-cpp-sdk-cognito-identity.dll
+!Binaries/Win64/aws-cpp-sdk-cognito-identity.lib
+!Binaries/Win64/aws-cpp-sdk-cognito-identity.pdb

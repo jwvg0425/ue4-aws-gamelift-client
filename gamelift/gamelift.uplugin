@@ -17,6 +17,11 @@
 			"LoadingPhase" : "PreDefault"
 		},
 		{
+			"Name" : "cognitoIdentity",
+			"Type" : "Runtime",
+			"LoadingPhase" : "PreDefault"
+		},
+		{
 			"Name" : "gamelift",
 			"Type" : "Runtime",
 			"LoadingPhase" : "PreDefault"
