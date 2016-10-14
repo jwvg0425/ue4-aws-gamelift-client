@@ -12,6 +12,11 @@
 	"Modules" :
 	[
 		{
+			"Name" : "awsCore",
+			"Type" : "Runtime",
+			"LoadingPhase" : "PreDefault"
+		},
+		{
 			"Name" : "gamelift",
 			"Type" : "Runtime",
 			"LoadingPhase" : "PreDefault"
