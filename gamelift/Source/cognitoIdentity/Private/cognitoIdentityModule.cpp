@@ -9,4 +9,4 @@ void CognitoIdentityModuleImpl::ShutdownModule()
 {
 }
 
-IMPLEMENT_MODULE(CognitoIdentityModuleImpl, Module);
+IMPLEMENT_MODULE(CognitoIdentityModuleImpl, cognitoIdentity);

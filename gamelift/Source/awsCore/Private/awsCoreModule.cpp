@@ -11,4 +11,4 @@ void AwsCoreModuleImpl::ShutdownModule()
 	Aws::ShutdownAPI(options);
 }
 
-IMPLEMENT_MODULE(AwsCoreModuleImpl, Module);
+IMPLEMENT_MODULE(AwsCoreModuleImpl, awsCore);

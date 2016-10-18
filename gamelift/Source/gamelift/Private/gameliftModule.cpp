@@ -9,4 +9,4 @@ void GameliftModuleImpl::ShutdownModule()
 {
 }
 
-IMPLEMENT_MODULE(GameliftModuleImpl, Module);
+IMPLEMENT_MODULE(GameliftModuleImpl, gamelift);
