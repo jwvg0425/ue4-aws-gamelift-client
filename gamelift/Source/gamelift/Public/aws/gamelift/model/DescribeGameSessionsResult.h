@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/GameSession.h>
+#include <utility>
 
 namespace Aws
 {
@@ -35,7 +36,10 @@ namespace GameLift
 namespace Model
 {
   /**
-   * <p>Represents the returned data in response to a request action.</p>
+   * <p>Represents the returned data in response to a request action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionsOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API DescribeGameSessionsResult
   {
@@ -60,7 +64,7 @@ namespace Model
      * <p>Collection of objects containing game session properties for each session
      * matching the request.</p>
      */
-    inline void SetGameSessions(Aws::Vector<GameSession>&& value) { m_gameSessions = value; }
+    inline void SetGameSessions(Aws::Vector<GameSession>&& value) { m_gameSessions = std::move(value); }
 
     /**
      * <p>Collection of objects containing game session properties for each session
@@ -72,7 +76,7 @@ namespace Model
      * <p>Collection of objects containing game session properties for each session
      * matching the request.</p>
      */
-    inline DescribeGameSessionsResult& WithGameSessions(Aws::Vector<GameSession>&& value) { SetGameSessions(value); return *this;}
+    inline DescribeGameSessionsResult& WithGameSessions(Aws::Vector<GameSession>&& value) { SetGameSessions(std::move(value)); return *this;}
 
     /**
      * <p>Collection of objects containing game session properties for each session
@@ -84,68 +88,54 @@ namespace Model
      * <p>Collection of objects containing game session properties for each session
      * matching the request.</p>
      */
-    inline DescribeGameSessionsResult& AddGameSessions(GameSession&& value) { m_gameSessions.push_back(value); return *this; }
+    inline DescribeGameSessionsResult& AddGameSessions(GameSession&& value) { m_gameSessions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
     inline DescribeGameSessionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
-    inline DescribeGameSessionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeGameSessionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
     inline DescribeGameSessionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

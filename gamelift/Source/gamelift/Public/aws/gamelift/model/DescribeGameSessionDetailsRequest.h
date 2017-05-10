@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -25,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request action.</p>
+   * <p>Represents the input for a request action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetailsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API DescribeGameSessionDetailsRequest : public GameLiftRequest
   {
@@ -35,129 +38,123 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
-     * <p>Unique identifier for a fleet. Specify a fleet to retrieve information on all
-     * game sessions active on the fleet.</p>
+     * <p>Unique identifier for a fleet to retrieve all game sessions active on the
+     * fleet.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet. Specify a fleet to retrieve information on all
-     * game sessions active on the fleet.</p>
+     * <p>Unique identifier for a fleet to retrieve all game sessions active on the
+     * fleet.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet. Specify a fleet to retrieve information on all
-     * game sessions active on the fleet.</p>
+     * <p>Unique identifier for a fleet to retrieve all game sessions active on the
+     * fleet.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet. Specify a fleet to retrieve information on all
-     * game sessions active on the fleet.</p>
+     * <p>Unique identifier for a fleet to retrieve all game sessions active on the
+     * fleet.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet. Specify a fleet to retrieve information on all
-     * game sessions active on the fleet.</p>
+     * <p>Unique identifier for a fleet to retrieve all game sessions active on the
+     * fleet.</p>
      */
     inline DescribeGameSessionDetailsRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet. Specify a fleet to retrieve information on all
-     * game sessions active on the fleet.</p>
+     * <p>Unique identifier for a fleet to retrieve all game sessions active on the
+     * fleet.</p>
      */
-    inline DescribeGameSessionDetailsRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline DescribeGameSessionDetailsRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet. Specify a fleet to retrieve information on all
-     * game sessions active on the fleet.</p>
+     * <p>Unique identifier for a fleet to retrieve all game sessions active on the
+     * fleet.</p>
      */
     inline DescribeGameSessionDetailsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session to retrieve
-     * information on.</p>
+     * <p>Unique identifier for the game session to retrieve.</p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session to retrieve
-     * information on.</p>
+     * <p>Unique identifier for the game session to retrieve.</p>
      */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session to retrieve
-     * information on.</p>
+     * <p>Unique identifier for the game session to retrieve.</p>
      */
-    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
+    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session to retrieve
-     * information on.</p>
+     * <p>Unique identifier for the game session to retrieve.</p>
      */
     inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session to retrieve
-     * information on.</p>
+     * <p>Unique identifier for the game session to retrieve.</p>
      */
     inline DescribeGameSessionDetailsRequest& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session to retrieve
-     * information on.</p>
+     * <p>Unique identifier for the game session to retrieve.</p>
      */
-    inline DescribeGameSessionDetailsRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(value); return *this;}
+    inline DescribeGameSessionDetailsRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session to retrieve
-     * information on.</p>
+     * <p>Unique identifier for the game session to retrieve.</p>
      */
     inline DescribeGameSessionDetailsRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet alias. Specify an alias to retrieve information
-     * on all game sessions active on the fleet.</p>
+     * <p>Unique identifier for an alias associated with the fleet to retrieve all game
+     * sessions for.</p>
      */
     inline const Aws::String& GetAliasId() const{ return m_aliasId; }
 
     /**
-     * <p>Unique identifier for a fleet alias. Specify an alias to retrieve information
-     * on all game sessions active on the fleet.</p>
+     * <p>Unique identifier for an alias associated with the fleet to retrieve all game
+     * sessions for.</p>
      */
     inline void SetAliasId(const Aws::String& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
 
     /**
-     * <p>Unique identifier for a fleet alias. Specify an alias to retrieve information
-     * on all game sessions active on the fleet.</p>
+     * <p>Unique identifier for an alias associated with the fleet to retrieve all game
+     * sessions for.</p>
      */
-    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
+    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet alias. Specify an alias to retrieve information
-     * on all game sessions active on the fleet.</p>
+     * <p>Unique identifier for an alias associated with the fleet to retrieve all game
+     * sessions for.</p>
      */
     inline void SetAliasId(const char* value) { m_aliasIdHasBeenSet = true; m_aliasId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet alias. Specify an alias to retrieve information
-     * on all game sessions active on the fleet.</p>
+     * <p>Unique identifier for an alias associated with the fleet to retrieve all game
+     * sessions for.</p>
      */
     inline DescribeGameSessionDetailsRequest& WithAliasId(const Aws::String& value) { SetAliasId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet alias. Specify an alias to retrieve information
-     * on all game sessions active on the fleet.</p>
+     * <p>Unique identifier for an alias associated with the fleet to retrieve all game
+     * sessions for.</p>
      */
-    inline DescribeGameSessionDetailsRequest& WithAliasId(Aws::String&& value) { SetAliasId(value); return *this;}
+    inline DescribeGameSessionDetailsRequest& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet alias. Specify an alias to retrieve information
-     * on all game sessions active on the fleet.</p>
+     * <p>Unique identifier for an alias associated with the fleet to retrieve all game
+     * sessions for.</p>
      */
     inline DescribeGameSessionDetailsRequest& WithAliasId(const char* value) { SetAliasId(value); return *this;}
 
@@ -180,7 +177,7 @@ namespace Model
      * include ACTIVE, <code>TERMINATED</code>, <code>ACTIVATING</code> and
      * <code>TERMINATING</code> (the last two are transitory). </p>
      */
-    inline void SetStatusFilter(Aws::String&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = value; }
+    inline void SetStatusFilter(Aws::String&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = std::move(value); }
 
     /**
      * <p>Game session status to filter results on. Possible game session statuses
@@ -201,7 +198,7 @@ namespace Model
      * include ACTIVE, <code>TERMINATED</code>, <code>ACTIVATING</code> and
      * <code>TERMINATING</code> (the last two are transitory). </p>
      */
-    inline DescribeGameSessionDetailsRequest& WithStatusFilter(Aws::String&& value) { SetStatusFilter(value); return *this;}
+    inline DescribeGameSessionDetailsRequest& WithStatusFilter(Aws::String&& value) { SetStatusFilter(std::move(value)); return *this;}
 
     /**
      * <p>Game session status to filter results on. Possible game session statuses
@@ -229,51 +226,51 @@ namespace Model
     inline DescribeGameSessionDetailsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
     inline DescribeGameSessionDetailsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
-    inline DescribeGameSessionDetailsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeGameSessionDetailsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
     inline DescribeGameSessionDetailsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

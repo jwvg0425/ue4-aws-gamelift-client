@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/GameSession.h>
+#include <utility>
 
 namespace Aws
 {
@@ -33,7 +34,10 @@ namespace GameLift
 namespace Model
 {
   /**
-   * <p>Represents the returned data in response to a request action.</p>
+   * <p>Represents the returned data in response to a request action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API UpdateGameSessionResult
   {
@@ -43,29 +47,29 @@ namespace Model
     UpdateGameSessionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Object containing the updated game session metadata.</p>
+     * <p>Object that contains the updated game session metadata.</p>
      */
     inline const GameSession& GetGameSession() const{ return m_gameSession; }
 
     /**
-     * <p>Object containing the updated game session metadata.</p>
+     * <p>Object that contains the updated game session metadata.</p>
      */
     inline void SetGameSession(const GameSession& value) { m_gameSession = value; }
 
     /**
-     * <p>Object containing the updated game session metadata.</p>
+     * <p>Object that contains the updated game session metadata.</p>
      */
-    inline void SetGameSession(GameSession&& value) { m_gameSession = value; }
+    inline void SetGameSession(GameSession&& value) { m_gameSession = std::move(value); }
 
     /**
-     * <p>Object containing the updated game session metadata.</p>
+     * <p>Object that contains the updated game session metadata.</p>
      */
     inline UpdateGameSessionResult& WithGameSession(const GameSession& value) { SetGameSession(value); return *this;}
 
     /**
-     * <p>Object containing the updated game session metadata.</p>
+     * <p>Object that contains the updated game session metadata.</p>
      */
-    inline UpdateGameSessionResult& WithGameSession(GameSession&& value) { SetGameSession(value); return *this;}
+    inline UpdateGameSessionResult& WithGameSession(GameSession&& value) { SetGameSession(std::move(value)); return *this;}
 
   private:
     GameSession m_gameSession;

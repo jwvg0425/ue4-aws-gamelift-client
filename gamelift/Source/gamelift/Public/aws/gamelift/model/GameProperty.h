@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -35,7 +36,9 @@ namespace Model
    * set up a game session. This object allows you to pass in any set of data needed
    * for your game. For more information, see the <a
    * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
-   * GameLift Developer Guide</a>.</p>
+   * GameLift Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameProperty">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API GameProperty
   {
@@ -45,46 +48,74 @@ namespace Model
     GameProperty& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    /**
+     * <p>TBD</p>
+     */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline GameProperty& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    
-    inline GameProperty& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    /**
+     * <p>TBD</p>
+     */
+    inline GameProperty& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline GameProperty& WithKey(const char* value) { SetKey(value); return *this;}
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline const Aws::String& GetValue() const{ return m_value; }
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    /**
+     * <p>TBD</p>
+     */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline GameProperty& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
-    
-    inline GameProperty& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    /**
+     * <p>TBD</p>
+     */
+    inline GameProperty& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline GameProperty& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:

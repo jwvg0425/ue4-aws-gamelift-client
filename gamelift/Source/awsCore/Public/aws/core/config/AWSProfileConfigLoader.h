@@ -144,7 +144,7 @@ namespace Aws
             virtual bool LoadInternal() override;
 
         private:
-            std::shared_ptr<Aws::Internal::EC2MetadataClient> m_metadataClient;
+            std::shared_ptr<Aws::Internal::EC2MetadataClient> m_ec2metadataClient;
         };
     }
 }

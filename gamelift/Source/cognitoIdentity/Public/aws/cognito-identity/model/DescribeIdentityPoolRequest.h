@@ -16,6 +16,7 @@
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/cognito-identity/CognitoIdentityRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -25,7 +26,9 @@ namespace Model
 {
 
   /**
-   * Input to the DescribeIdentityPool action.
+   * <p>Input to the DescribeIdentityPool action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPoolInput">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API DescribeIdentityPoolRequest : public CognitoIdentityRequest
   {
@@ -35,38 +38,39 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
-    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::move(value); }
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline DescribeIdentityPoolRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
-    inline DescribeIdentityPoolRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
+    inline DescribeIdentityPoolRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(std::move(value)); return *this;}
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline DescribeIdentityPoolRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 

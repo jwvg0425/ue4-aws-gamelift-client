@@ -34,7 +34,9 @@ namespace Model
    * or be in the process of matching the number of desired instances. Pending and
    * terminating counts are non-zero only if fleet capacity is adjusting to an
    * <a>UpdateFleetCapacity</a> request, or if access to resources is temporarily
-   * affected.</p>
+   * affected.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/EC2InstanceCounts">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API EC2InstanceCounts
   {
@@ -139,19 +141,19 @@ namespace Model
 
     /**
      * <p>Number of instances in the fleet that are no longer active but haven't yet
-     * been terminated. </p>
+     * been terminated.</p>
      */
     inline int GetTERMINATING() const{ return m_tERMINATING; }
 
     /**
      * <p>Number of instances in the fleet that are no longer active but haven't yet
-     * been terminated. </p>
+     * been terminated.</p>
      */
     inline void SetTERMINATING(int value) { m_tERMINATINGHasBeenSet = true; m_tERMINATING = value; }
 
     /**
      * <p>Number of instances in the fleet that are no longer active but haven't yet
-     * been terminated. </p>
+     * been terminated.</p>
      */
     inline EC2InstanceCounts& WithTERMINATING(int value) { SetTERMINATING(value); return *this;}
 

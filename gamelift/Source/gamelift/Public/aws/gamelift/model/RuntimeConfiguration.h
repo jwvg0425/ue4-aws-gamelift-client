@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gamelift/model/ServerProcess.h>
+#include <utility>
 
 namespace Aws
 {
@@ -43,11 +44,13 @@ namespace Model
    * the same instance. This option might be useful, for example, to run more than
    * one version of your game server on the same fleet. Another option is to specify
    * configurations for the same server executable but with different launch
-   * parameters.</p> <p>A GameLift instance is limited to 50 processes running
+   * parameters.</p> <p>A Amazon GameLift instance is limited to 50 processes running
    * simultaneously. To calculate the total number of processes specified in a
    * runtime configuration, add the values of the <code>ConcurrentExecutions</code>
-   * parameter for each <code><a>ServerProcess</a></code> object in the runtime
-   * configuration.</p>
+   * parameter for each <code> <a>ServerProcess</a> </code> object in the runtime
+   * configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RuntimeConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API RuntimeConfiguration
   {
@@ -59,45 +62,45 @@ namespace Model
 
     /**
      * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet </p>
+     * to run on each instance in a fleet</p>
      */
     inline const Aws::Vector<ServerProcess>& GetServerProcesses() const{ return m_serverProcesses; }
 
     /**
      * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet </p>
+     * to run on each instance in a fleet</p>
      */
     inline void SetServerProcesses(const Aws::Vector<ServerProcess>& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses = value; }
 
     /**
      * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet </p>
+     * to run on each instance in a fleet</p>
      */
-    inline void SetServerProcesses(Aws::Vector<ServerProcess>&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses = value; }
+    inline void SetServerProcesses(Aws::Vector<ServerProcess>&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses = std::move(value); }
 
     /**
      * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet </p>
+     * to run on each instance in a fleet</p>
      */
     inline RuntimeConfiguration& WithServerProcesses(const Aws::Vector<ServerProcess>& value) { SetServerProcesses(value); return *this;}
 
     /**
      * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet </p>
+     * to run on each instance in a fleet</p>
      */
-    inline RuntimeConfiguration& WithServerProcesses(Aws::Vector<ServerProcess>&& value) { SetServerProcesses(value); return *this;}
+    inline RuntimeConfiguration& WithServerProcesses(Aws::Vector<ServerProcess>&& value) { SetServerProcesses(std::move(value)); return *this;}
 
     /**
      * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet </p>
+     * to run on each instance in a fleet</p>
      */
     inline RuntimeConfiguration& AddServerProcesses(const ServerProcess& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses.push_back(value); return *this; }
 
     /**
      * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet </p>
+     * to run on each instance in a fleet</p>
      */
-    inline RuntimeConfiguration& AddServerProcesses(ServerProcess&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses.push_back(value); return *this; }
+    inline RuntimeConfiguration& AddServerProcesses(ServerProcess&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ServerProcess> m_serverProcesses;

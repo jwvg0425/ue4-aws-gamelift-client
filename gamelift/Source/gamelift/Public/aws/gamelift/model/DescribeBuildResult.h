@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/Build.h>
+#include <utility>
 
 namespace Aws
 {
@@ -33,7 +34,10 @@ namespace GameLift
 namespace Model
 {
   /**
-   * <p>Represents the returned data in response to a request action.</p>
+   * <p>Represents the returned data in response to a request action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuildOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API DescribeBuildResult
   {
@@ -55,7 +59,7 @@ namespace Model
     /**
      * <p>Set of properties describing the requested build.</p>
      */
-    inline void SetBuild(Build&& value) { m_build = value; }
+    inline void SetBuild(Build&& value) { m_build = std::move(value); }
 
     /**
      * <p>Set of properties describing the requested build.</p>
@@ -65,7 +69,7 @@ namespace Model
     /**
      * <p>Set of properties describing the requested build.</p>
      */
-    inline DescribeBuildResult& WithBuild(Build&& value) { SetBuild(value); return *this;}
+    inline DescribeBuildResult& WithBuild(Build&& value) { SetBuild(std::move(value)); return *this;}
 
   private:
     Build m_build;

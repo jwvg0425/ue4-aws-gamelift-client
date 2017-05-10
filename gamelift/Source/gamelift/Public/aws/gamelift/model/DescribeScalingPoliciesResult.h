@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/ScalingPolicy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -35,7 +36,10 @@ namespace GameLift
 namespace Model
 {
   /**
-   * <p>Represents the returned data in response to a request action.</p>
+   * <p>Represents the returned data in response to a request action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPoliciesOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API DescribeScalingPoliciesResult
   {
@@ -60,7 +64,7 @@ namespace Model
      * <p>Collection of objects containing the scaling policies matching the
      * request.</p>
      */
-    inline void SetScalingPolicies(Aws::Vector<ScalingPolicy>&& value) { m_scalingPolicies = value; }
+    inline void SetScalingPolicies(Aws::Vector<ScalingPolicy>&& value) { m_scalingPolicies = std::move(value); }
 
     /**
      * <p>Collection of objects containing the scaling policies matching the
@@ -72,7 +76,7 @@ namespace Model
      * <p>Collection of objects containing the scaling policies matching the
      * request.</p>
      */
-    inline DescribeScalingPoliciesResult& WithScalingPolicies(Aws::Vector<ScalingPolicy>&& value) { SetScalingPolicies(value); return *this;}
+    inline DescribeScalingPoliciesResult& WithScalingPolicies(Aws::Vector<ScalingPolicy>&& value) { SetScalingPolicies(std::move(value)); return *this;}
 
     /**
      * <p>Collection of objects containing the scaling policies matching the
@@ -84,68 +88,54 @@ namespace Model
      * <p>Collection of objects containing the scaling policies matching the
      * request.</p>
      */
-    inline DescribeScalingPoliciesResult& AddScalingPolicies(ScalingPolicy&& value) { m_scalingPolicies.push_back(value); return *this; }
+    inline DescribeScalingPoliciesResult& AddScalingPolicies(ScalingPolicy&& value) { m_scalingPolicies.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
     inline DescribeScalingPoliciesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
-    inline DescribeScalingPoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeScalingPoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
     inline DescribeScalingPoliciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

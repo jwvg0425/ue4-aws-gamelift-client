@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/Build.h>
+#include <utility>
 
 namespace Aws
 {
@@ -33,7 +34,10 @@ namespace GameLift
 namespace Model
 {
   /**
-   * <p>Represents the returned data in response to a request action.</p>
+   * <p>Represents the returned data in response to a request action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuildOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API UpdateBuildResult
   {
@@ -43,29 +47,29 @@ namespace Model
     UpdateBuildResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Object containing the updated build record.</p>
+     * <p>Object that contains the updated build record.</p>
      */
     inline const Build& GetBuild() const{ return m_build; }
 
     /**
-     * <p>Object containing the updated build record.</p>
+     * <p>Object that contains the updated build record.</p>
      */
     inline void SetBuild(const Build& value) { m_build = value; }
 
     /**
-     * <p>Object containing the updated build record.</p>
+     * <p>Object that contains the updated build record.</p>
      */
-    inline void SetBuild(Build&& value) { m_build = value; }
+    inline void SetBuild(Build&& value) { m_build = std::move(value); }
 
     /**
-     * <p>Object containing the updated build record.</p>
+     * <p>Object that contains the updated build record.</p>
      */
     inline UpdateBuildResult& WithBuild(const Build& value) { SetBuild(value); return *this;}
 
     /**
-     * <p>Object containing the updated build record.</p>
+     * <p>Object that contains the updated build record.</p>
      */
-    inline UpdateBuildResult& WithBuild(Build&& value) { SetBuild(value); return *this;}
+    inline UpdateBuildResult& WithBuild(Build&& value) { SetBuild(std::move(value)); return *this;}
 
   private:
     Build m_build;

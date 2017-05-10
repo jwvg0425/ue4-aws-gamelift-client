@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -25,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request action.</p>
+   * <p>Represents the input for a request action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrlInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API GetGameSessionLogUrlRequest : public GameLiftRequest
   {
@@ -35,45 +38,39 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
-     * <p>Unique identifier for a game session. Specify the game session you want to
-     * get logs for.</p>
+     * <p>Unique identifier for the game session to get logs for.</p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session you want to
-     * get logs for.</p>
+     * <p>Unique identifier for the game session to get logs for.</p>
      */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session you want to
-     * get logs for.</p>
+     * <p>Unique identifier for the game session to get logs for.</p>
      */
-    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
+    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session you want to
-     * get logs for.</p>
+     * <p>Unique identifier for the game session to get logs for.</p>
      */
     inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session you want to
-     * get logs for.</p>
+     * <p>Unique identifier for the game session to get logs for.</p>
      */
     inline GetGameSessionLogUrlRequest& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session you want to
-     * get logs for.</p>
+     * <p>Unique identifier for the game session to get logs for.</p>
      */
-    inline GetGameSessionLogUrlRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(value); return *this;}
+    inline GetGameSessionLogUrlRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session you want to
-     * get logs for.</p>
+     * <p>Unique identifier for the game session to get logs for.</p>
      */
     inline GetGameSessionLogUrlRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/FleetCapacity.h>
+#include <utility>
 
 namespace Aws
 {
@@ -35,7 +36,10 @@ namespace GameLift
 namespace Model
 {
   /**
-   * <p>Represents the returned data in response to a request action.</p>
+   * <p>Represents the returned data in response to a request action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacityOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API DescribeFleetCapacityResult
   {
@@ -63,7 +67,7 @@ namespace Model
      * fleet ID. Leave this parameter empty to retrieve capacity information for all
      * fleets.</p>
      */
-    inline void SetFleetCapacity(Aws::Vector<FleetCapacity>&& value) { m_fleetCapacity = value; }
+    inline void SetFleetCapacity(Aws::Vector<FleetCapacity>&& value) { m_fleetCapacity = std::move(value); }
 
     /**
      * <p>Collection of objects containing capacity information for each requested
@@ -77,7 +81,7 @@ namespace Model
      * fleet ID. Leave this parameter empty to retrieve capacity information for all
      * fleets.</p>
      */
-    inline DescribeFleetCapacityResult& WithFleetCapacity(Aws::Vector<FleetCapacity>&& value) { SetFleetCapacity(value); return *this;}
+    inline DescribeFleetCapacityResult& WithFleetCapacity(Aws::Vector<FleetCapacity>&& value) { SetFleetCapacity(std::move(value)); return *this;}
 
     /**
      * <p>Collection of objects containing capacity information for each requested
@@ -91,68 +95,54 @@ namespace Model
      * fleet ID. Leave this parameter empty to retrieve capacity information for all
      * fleets.</p>
      */
-    inline DescribeFleetCapacityResult& AddFleetCapacity(FleetCapacity&& value) { m_fleetCapacity.push_back(value); return *this; }
+    inline DescribeFleetCapacityResult& AddFleetCapacity(FleetCapacity&& value) { m_fleetCapacity.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
     inline DescribeFleetCapacityResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
-    inline DescribeFleetCapacityResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeFleetCapacityResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
+     * list.</p>
      */
     inline DescribeFleetCapacityResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

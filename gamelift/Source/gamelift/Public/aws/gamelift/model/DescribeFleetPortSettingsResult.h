@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gamelift/model/IpPermission.h>
+#include <utility>
 
 namespace Aws
 {
@@ -34,7 +35,10 @@ namespace GameLift
 namespace Model
 {
   /**
-   * <p>Represents the returned data in response to a request action.</p>
+   * <p>Represents the returned data in response to a request action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettingsOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API DescribeFleetPortSettingsResult
   {
@@ -44,39 +48,39 @@ namespace Model
     DescribeFleetPortSettingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Object containing port settings for the requested fleet ID.</p>
+     * <p>Object that contains port settings for the requested fleet ID.</p>
      */
     inline const Aws::Vector<IpPermission>& GetInboundPermissions() const{ return m_inboundPermissions; }
 
     /**
-     * <p>Object containing port settings for the requested fleet ID.</p>
+     * <p>Object that contains port settings for the requested fleet ID.</p>
      */
     inline void SetInboundPermissions(const Aws::Vector<IpPermission>& value) { m_inboundPermissions = value; }
 
     /**
-     * <p>Object containing port settings for the requested fleet ID.</p>
+     * <p>Object that contains port settings for the requested fleet ID.</p>
      */
-    inline void SetInboundPermissions(Aws::Vector<IpPermission>&& value) { m_inboundPermissions = value; }
+    inline void SetInboundPermissions(Aws::Vector<IpPermission>&& value) { m_inboundPermissions = std::move(value); }
 
     /**
-     * <p>Object containing port settings for the requested fleet ID.</p>
+     * <p>Object that contains port settings for the requested fleet ID.</p>
      */
     inline DescribeFleetPortSettingsResult& WithInboundPermissions(const Aws::Vector<IpPermission>& value) { SetInboundPermissions(value); return *this;}
 
     /**
-     * <p>Object containing port settings for the requested fleet ID.</p>
+     * <p>Object that contains port settings for the requested fleet ID.</p>
      */
-    inline DescribeFleetPortSettingsResult& WithInboundPermissions(Aws::Vector<IpPermission>&& value) { SetInboundPermissions(value); return *this;}
+    inline DescribeFleetPortSettingsResult& WithInboundPermissions(Aws::Vector<IpPermission>&& value) { SetInboundPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>Object containing port settings for the requested fleet ID.</p>
+     * <p>Object that contains port settings for the requested fleet ID.</p>
      */
     inline DescribeFleetPortSettingsResult& AddInboundPermissions(const IpPermission& value) { m_inboundPermissions.push_back(value); return *this; }
 
     /**
-     * <p>Object containing port settings for the requested fleet ID.</p>
+     * <p>Object that contains port settings for the requested fleet ID.</p>
      */
-    inline DescribeFleetPortSettingsResult& AddInboundPermissions(IpPermission&& value) { m_inboundPermissions.push_back(value); return *this; }
+    inline DescribeFleetPortSettingsResult& AddInboundPermissions(IpPermission&& value) { m_inboundPermissions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<IpPermission> m_inboundPermissions;

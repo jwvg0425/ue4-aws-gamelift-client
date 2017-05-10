@@ -18,9 +18,10 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-
+#include <aws/core/internal/AWSHttpResourceClient.h>
 #include <memory>
 #include <mutex>
 
@@ -35,6 +36,7 @@ namespace Aws
     namespace Auth
     {
         static int REFRESH_THRESHOLD = 1000 * 60 * 15;
+        static int EXPIRATION_GRACE_PERIOD = 5 * 1000;
 
         /**
          * Simple data object around aws credentials
@@ -241,13 +243,13 @@ namespace Aws
         public:
 
             /**
-            * Initializes with refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 1 minute.
+            * Initializes with refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 15 minutes.
             */
             ProfileConfigFileAWSCredentialsProvider(long refreshRateMs = REFRESH_THRESHOLD);
 
             /**
             * Initializes with a profile override and
-            * refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 1 minute.
+            * refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 15 minutes.
             */
             ProfileConfigFileAWSCredentialsProvider(const char* profile, long refreshRateMs = REFRESH_THRESHOLD);
 
@@ -316,6 +318,51 @@ namespace Aws
             long m_loadFrequencyMs;
             mutable std::mutex m_reloadMutex;
         };
+
+        /**
+        * Credentials provider implementation that loads credentials from the Amazon
+        * ECS IAM ROLE.
+        */
+        class AWS_CORE_API TaskRoleCredentialsProvider : public AWSCredentialsProvider
+        {
+        public:
+            /**
+             * Initializes the provider to refresh credentials form the ECS IAM ROLE service every 15 minutes,
+             * or before it expires
+             * Constructs an ECSCredentialsClient using the default http stack (most likely what you want).
+             */
+            TaskRoleCredentialsProvider(const char* resourcePath, long refreshRateMs = REFRESH_THRESHOLD);
+
+            /**
+             * Initializes the provider to refresh credentials form the ECS IAM ROLE service every 15 minutes,
+             * or before it expires
+             * Constructs an AWSHttpResourceClient using the given client
+             */
+            TaskRoleCredentialsProvider(const std::shared_ptr<Aws::Internal::ECSCredentialsClient>& client,
+                    long refreshRateMs = REFRESH_THRESHOLD);
+            /**
+            * Retrieves the credentials if found, otherwise returns empty credential set.
+            */
+            AWSCredentials GetAWSCredentials() override;
+
+        private:
+            /**
+             * See if the Credentials will expire soon, EXPIRATION_GRACE_PERIOD millseconds before expiration, refresh it.
+             */
+            inline bool ExpiresSoon() 
+            {
+                return (m_expirationDate.Millis() - Aws::Utils::DateTime::Now().Millis() < EXPIRATION_GRACE_PERIOD);
+            }
+
+            void RefreshIfExpired();
+
+        private:
+            std::shared_ptr<Aws::Internal::ECSCredentialsClient> m_ecsCredentialsClient;
+            long m_loadFrequencyMs;
+            mutable std::mutex m_reloadMutex;
+            Aws::Utils::DateTime m_expirationDate;
+            Aws::Auth::AWSCredentials m_credentials;
+        };
+
     } // namespace Auth
 } // namespace Aws
-

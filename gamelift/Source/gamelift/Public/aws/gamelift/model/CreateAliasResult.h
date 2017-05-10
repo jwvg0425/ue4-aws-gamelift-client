@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/Alias.h>
+#include <utility>
 
 namespace Aws
 {
@@ -33,7 +34,10 @@ namespace GameLift
 namespace Model
 {
   /**
-   * <p>Represents the returned data in response to a request action.</p>
+   * <p>Represents the returned data in response to a request action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAliasOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API CreateAliasResult
   {
@@ -43,29 +47,29 @@ namespace Model
     CreateAliasResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Object containing the newly created alias record.</p>
+     * <p>Object that describes the newly created alias record.</p>
      */
     inline const Alias& GetAlias() const{ return m_alias; }
 
     /**
-     * <p>Object containing the newly created alias record.</p>
+     * <p>Object that describes the newly created alias record.</p>
      */
     inline void SetAlias(const Alias& value) { m_alias = value; }
 
     /**
-     * <p>Object containing the newly created alias record.</p>
+     * <p>Object that describes the newly created alias record.</p>
      */
-    inline void SetAlias(Alias&& value) { m_alias = value; }
+    inline void SetAlias(Alias&& value) { m_alias = std::move(value); }
 
     /**
-     * <p>Object containing the newly created alias record.</p>
+     * <p>Object that describes the newly created alias record.</p>
      */
     inline CreateAliasResult& WithAlias(const Alias& value) { SetAlias(value); return *this;}
 
     /**
-     * <p>Object containing the newly created alias record.</p>
+     * <p>Object that describes the newly created alias record.</p>
      */
-    inline CreateAliasResult& WithAlias(Alias&& value) { SetAlias(value); return *this;}
+    inline CreateAliasResult& WithAlias(Alias&& value) { SetAlias(std::move(value)); return *this;}
 
   private:
     Alias m_alias;

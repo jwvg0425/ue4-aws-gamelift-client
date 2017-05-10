@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -25,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request action.</p>
+   * <p>Represents the input for a request action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacityInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API UpdateFleetCapacityRequest : public GameLiftRequest
   {
@@ -35,38 +38,39 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
-     * <p>Unique identifier for the fleet you want to update capacity for. </p>
+     * <p>Unique identifier for a fleet to update capacity for.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for the fleet you want to update capacity for. </p>
+     * <p>Unique identifier for a fleet to update capacity for.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for the fleet you want to update capacity for. </p>
+     * <p>Unique identifier for a fleet to update capacity for.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for the fleet you want to update capacity for. </p>
+     * <p>Unique identifier for a fleet to update capacity for.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for the fleet you want to update capacity for. </p>
+     * <p>Unique identifier for a fleet to update capacity for.</p>
      */
     inline UpdateFleetCapacityRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the fleet you want to update capacity for. </p>
+     * <p>Unique identifier for a fleet to update capacity for.</p>
      */
-    inline UpdateFleetCapacityRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline UpdateFleetCapacityRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for the fleet you want to update capacity for. </p>
+     * <p>Unique identifier for a fleet to update capacity for.</p>
      */
     inline UpdateFleetCapacityRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 

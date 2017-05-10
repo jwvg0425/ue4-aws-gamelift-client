@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -35,7 +36,9 @@ namespace CognitoIdentity
 namespace Model
 {
   /**
-   * A description of the identity.
+   * <p>A description of the identity.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/IdentityDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API DescribeIdentityResult
   {
@@ -45,77 +48,85 @@ namespace Model
     DescribeIdentityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline void SetIdentityId(const Aws::String& value) { m_identityId = value; }
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
-    inline void SetIdentityId(Aws::String&& value) { m_identityId = value; }
+    inline void SetIdentityId(Aws::String&& value) { m_identityId = std::move(value); }
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline void SetIdentityId(const char* value) { m_identityId.assign(value); }
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline DescribeIdentityResult& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
-    inline DescribeIdentityResult& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
+    inline DescribeIdentityResult& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline DescribeIdentityResult& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogins() const{ return m_logins; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
      */
     inline void SetLogins(const Aws::Vector<Aws::String>& value) { m_logins = value; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
      */
-    inline void SetLogins(Aws::Vector<Aws::String>&& value) { m_logins = value; }
+    inline void SetLogins(Aws::Vector<Aws::String>&& value) { m_logins = std::move(value); }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
      */
     inline DescribeIdentityResult& WithLogins(const Aws::Vector<Aws::String>& value) { SetLogins(value); return *this;}
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
      */
-    inline DescribeIdentityResult& WithLogins(Aws::Vector<Aws::String>&& value) { SetLogins(value); return *this;}
+    inline DescribeIdentityResult& WithLogins(Aws::Vector<Aws::String>&& value) { SetLogins(std::move(value)); return *this;}
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
      */
     inline DescribeIdentityResult& AddLogins(const Aws::String& value) { m_logins.push_back(value); return *this; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
      */
-    inline DescribeIdentityResult& AddLogins(Aws::String&& value) { m_logins.push_back(value); return *this; }
+    inline DescribeIdentityResult& AddLogins(Aws::String&& value) { m_logins.push_back(std::move(value)); return *this; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
      */
     inline DescribeIdentityResult& AddLogins(const char* value) { m_logins.push_back(value); return *this; }
 
@@ -132,7 +143,7 @@ namespace Model
     /**
      * <p>Date on which the identity was created.</p>
      */
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = value; }
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
 
     /**
      * <p>Date on which the identity was created.</p>
@@ -142,7 +153,7 @@ namespace Model
     /**
      * <p>Date on which the identity was created.</p>
      */
-    inline DescribeIdentityResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
+    inline DescribeIdentityResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
     /**
      * <p>Date on which the identity was last modified.</p>
@@ -157,7 +168,7 @@ namespace Model
     /**
      * <p>Date on which the identity was last modified.</p>
      */
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDate = value; }
+    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDate = std::move(value); }
 
     /**
      * <p>Date on which the identity was last modified.</p>
@@ -167,7 +178,7 @@ namespace Model
     /**
      * <p>Date on which the identity was last modified.</p>
      */
-    inline DescribeIdentityResult& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(value); return *this;}
+    inline DescribeIdentityResult& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_identityId;

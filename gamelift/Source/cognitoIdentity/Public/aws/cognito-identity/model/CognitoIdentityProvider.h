@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -32,7 +33,9 @@ namespace Model
 
   /**
    * <p>A provider representing an Amazon Cognito Identity User Pool and its client
-   * ID.</p>
+   * ID.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CognitoIdentityProvider">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API CognitoIdentityProvider
   {
@@ -58,7 +61,7 @@ namespace Model
      * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
-    inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
+    inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = std::move(value); }
 
     /**
      * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
@@ -76,7 +79,7 @@ namespace Model
      * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
-    inline CognitoIdentityProvider& WithProviderName(Aws::String&& value) { SetProviderName(value); return *this;}
+    inline CognitoIdentityProvider& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
 
     /**
      * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
@@ -97,7 +100,7 @@ namespace Model
     /**
      * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
      */
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
+    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
 
     /**
      * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
@@ -112,18 +115,38 @@ namespace Model
     /**
      * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
      */
-    inline CognitoIdentityProvider& WithClientId(Aws::String&& value) { SetClientId(value); return *this;}
+    inline CognitoIdentityProvider& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
 
     /**
      * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
      */
     inline CognitoIdentityProvider& WithClientId(const char* value) { SetClientId(value); return *this;}
 
+    /**
+     * <p>TRUE if server-side token validation is enabled for the identity provider’s
+     * token.</p>
+     */
+    inline bool GetServerSideTokenCheck() const{ return m_serverSideTokenCheck; }
+
+    /**
+     * <p>TRUE if server-side token validation is enabled for the identity provider’s
+     * token.</p>
+     */
+    inline void SetServerSideTokenCheck(bool value) { m_serverSideTokenCheckHasBeenSet = true; m_serverSideTokenCheck = value; }
+
+    /**
+     * <p>TRUE if server-side token validation is enabled for the identity provider’s
+     * token.</p>
+     */
+    inline CognitoIdentityProvider& WithServerSideTokenCheck(bool value) { SetServerSideTokenCheck(value); return *this;}
+
   private:
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet;
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet;
+    bool m_serverSideTokenCheck;
+    bool m_serverSideTokenCheckHasBeenSet;
   };
 
 } // namespace Model

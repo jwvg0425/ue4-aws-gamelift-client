@@ -20,7 +20,9 @@
 #include <aws/gamelift/model/EC2InstanceType.h>
 #include <aws/gamelift/model/ProtectionPolicy.h>
 #include <aws/gamelift/model/RuntimeConfiguration.h>
+#include <aws/gamelift/model/ResourceCreationLimitPolicy.h>
 #include <aws/gamelift/model/IpPermission.h>
+#include <utility>
 
 namespace Aws
 {
@@ -30,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request action.</p>
+   * <p>Represents the input for a request action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleetInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API CreateFleetRequest : public GameLiftRequest
   {
@@ -40,45 +44,46 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline CreateFleetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
-    inline CreateFleetRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateFleetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline CreateFleetRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -95,7 +100,7 @@ namespace Model
     /**
      * <p>Human-readable description of a fleet.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Human-readable description of a fleet.</p>
@@ -110,7 +115,7 @@ namespace Model
     /**
      * <p>Human-readable description of a fleet.</p>
      */
-    inline CreateFleetRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateFleetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Human-readable description of a fleet.</p>
@@ -118,51 +123,58 @@ namespace Model
     inline CreateFleetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Unique identifier of the build to be deployed on the new fleet. The build
-     * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * status. This fleet setting cannot be changed once the fleet is created.</p>
+     * <p>Unique identifier for a build to be deployed on the new fleet. The build must
+     * have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet
+     * is created.</p>
      */
     inline const Aws::String& GetBuildId() const{ return m_buildId; }
 
     /**
-     * <p>Unique identifier of the build to be deployed on the new fleet. The build
-     * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * status. This fleet setting cannot be changed once the fleet is created.</p>
+     * <p>Unique identifier for a build to be deployed on the new fleet. The build must
+     * have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet
+     * is created.</p>
      */
     inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
-     * <p>Unique identifier of the build to be deployed on the new fleet. The build
-     * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * status. This fleet setting cannot be changed once the fleet is created.</p>
+     * <p>Unique identifier for a build to be deployed on the new fleet. The build must
+     * have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet
+     * is created.</p>
      */
-    inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
+    inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = std::move(value); }
 
     /**
-     * <p>Unique identifier of the build to be deployed on the new fleet. The build
-     * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * status. This fleet setting cannot be changed once the fleet is created.</p>
+     * <p>Unique identifier for a build to be deployed on the new fleet. The build must
+     * have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet
+     * is created.</p>
      */
     inline void SetBuildId(const char* value) { m_buildIdHasBeenSet = true; m_buildId.assign(value); }
 
     /**
-     * <p>Unique identifier of the build to be deployed on the new fleet. The build
-     * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * status. This fleet setting cannot be changed once the fleet is created.</p>
+     * <p>Unique identifier for a build to be deployed on the new fleet. The build must
+     * have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet
+     * is created.</p>
      */
     inline CreateFleetRequest& WithBuildId(const Aws::String& value) { SetBuildId(value); return *this;}
 
     /**
-     * <p>Unique identifier of the build to be deployed on the new fleet. The build
-     * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * status. This fleet setting cannot be changed once the fleet is created.</p>
+     * <p>Unique identifier for a build to be deployed on the new fleet. The build must
+     * have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet
+     * is created.</p>
      */
-    inline CreateFleetRequest& WithBuildId(Aws::String&& value) { SetBuildId(value); return *this;}
+    inline CreateFleetRequest& WithBuildId(Aws::String&& value) { SetBuildId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier of the build to be deployed on the new fleet. The build
-     * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * status. This fleet setting cannot be changed once the fleet is created.</p>
+     * <p>Unique identifier for a build to be deployed on the new fleet. The build must
+     * have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet
+     * is created.</p>
      */
     inline CreateFleetRequest& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 
@@ -188,7 +200,7 @@ namespace Model
      * launch path and launch parameters instead of a runtime configuration will
      * continue to work.)</p>
      */
-    inline void SetServerLaunchPath(Aws::String&& value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath = value; }
+    inline void SetServerLaunchPath(Aws::String&& value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath = std::move(value); }
 
     /**
      * <p>This parameter is no longer used. Instead, specify a server launch path using
@@ -212,7 +224,7 @@ namespace Model
      * launch path and launch parameters instead of a runtime configuration will
      * continue to work.)</p>
      */
-    inline CreateFleetRequest& WithServerLaunchPath(Aws::String&& value) { SetServerLaunchPath(value); return *this;}
+    inline CreateFleetRequest& WithServerLaunchPath(Aws::String&& value) { SetServerLaunchPath(std::move(value)); return *this;}
 
     /**
      * <p>This parameter is no longer used. Instead, specify a server launch path using
@@ -244,7 +256,7 @@ namespace Model
      * server launch path and launch parameters instead of a runtime configuration will
      * continue to work.)</p>
      */
-    inline void SetServerLaunchParameters(Aws::String&& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = value; }
+    inline void SetServerLaunchParameters(Aws::String&& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = std::move(value); }
 
     /**
      * <p>This parameter is no longer used. Instead, specify server launch parameters
@@ -268,7 +280,7 @@ namespace Model
      * server launch path and launch parameters instead of a runtime configuration will
      * continue to work.)</p>
      */
-    inline CreateFleetRequest& WithServerLaunchParameters(Aws::String&& value) { SetServerLaunchParameters(value); return *this;}
+    inline CreateFleetRequest& WithServerLaunchParameters(Aws::String&& value) { SetServerLaunchParameters(std::move(value)); return *this;}
 
     /**
      * <p>This parameter is no longer used. Instead, specify server launch parameters
@@ -279,99 +291,91 @@ namespace Model
     inline CreateFleetRequest& WithServerLaunchParameters(const char* value) { SetServerLaunchParameters(value); return *this;}
 
     /**
-     * <p>Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs are in
-     * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
-     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. See more information in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * API Reference</a>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetLogPaths() const{ return m_logPaths; }
 
     /**
-     * <p>Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs are in
-     * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
-     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. See more information in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * API Reference</a>. </p>
      */
     inline void SetLogPaths(const Aws::Vector<Aws::String>& value) { m_logPathsHasBeenSet = true; m_logPaths = value; }
 
     /**
-     * <p>Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs are in
-     * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
-     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. See more information in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * API Reference</a>. </p>
      */
-    inline void SetLogPaths(Aws::Vector<Aws::String>&& value) { m_logPathsHasBeenSet = true; m_logPaths = value; }
+    inline void SetLogPaths(Aws::Vector<Aws::String>&& value) { m_logPathsHasBeenSet = true; m_logPaths = std::move(value); }
 
     /**
-     * <p>Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs are in
-     * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
-     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. See more information in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * API Reference</a>. </p>
      */
     inline CreateFleetRequest& WithLogPaths(const Aws::Vector<Aws::String>& value) { SetLogPaths(value); return *this;}
 
     /**
-     * <p>Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs are in
-     * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
-     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. See more information in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * API Reference</a>. </p>
      */
-    inline CreateFleetRequest& WithLogPaths(Aws::Vector<Aws::String>&& value) { SetLogPaths(value); return *this;}
+    inline CreateFleetRequest& WithLogPaths(Aws::Vector<Aws::String>&& value) { SetLogPaths(std::move(value)); return *this;}
 
     /**
-     * <p>Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs are in
-     * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
-     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. See more information in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * API Reference</a>. </p>
      */
     inline CreateFleetRequest& AddLogPaths(const Aws::String& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
     /**
-     * <p>Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs are in
-     * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
-     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. See more information in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * API Reference</a>. </p>
      */
-    inline CreateFleetRequest& AddLogPaths(Aws::String&& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
+    inline CreateFleetRequest& AddLogPaths(Aws::String&& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs are in
-     * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
-     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. See more information in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * API Reference</a>. </p>
      */
     inline CreateFleetRequest& AddLogPaths(const char* value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
      * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. GameLift supports the
-     * following EC2 instance types. See <a
-     * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * including CPU, memory, storage, and networking capacity. Amazon GameLift
+     * supports the following EC2 instance types. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
     inline const EC2InstanceType& GetEC2InstanceType() const{ return m_eC2InstanceType; }
@@ -379,9 +383,9 @@ namespace Model
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
      * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. GameLift supports the
-     * following EC2 instance types. See <a
-     * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * including CPU, memory, storage, and networking capacity. Amazon GameLift
+     * supports the following EC2 instance types. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
     inline void SetEC2InstanceType(const EC2InstanceType& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = value; }
@@ -389,19 +393,19 @@ namespace Model
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
      * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. GameLift supports the
-     * following EC2 instance types. See <a
-     * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * including CPU, memory, storage, and networking capacity. Amazon GameLift
+     * supports the following EC2 instance types. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
-    inline void SetEC2InstanceType(EC2InstanceType&& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = value; }
+    inline void SetEC2InstanceType(EC2InstanceType&& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = std::move(value); }
 
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
      * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. GameLift supports the
-     * following EC2 instance types. See <a
-     * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * including CPU, memory, storage, and networking capacity. Amazon GameLift
+     * supports the following EC2 instance types. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
     inline CreateFleetRequest& WithEC2InstanceType(const EC2InstanceType& value) { SetEC2InstanceType(value); return *this;}
@@ -409,12 +413,12 @@ namespace Model
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
      * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. GameLift supports the
-     * following EC2 instance types. See <a
-     * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * including CPU, memory, storage, and networking capacity. Amazon GameLift
+     * supports the following EC2 instance types. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
-    inline CreateFleetRequest& WithEC2InstanceType(EC2InstanceType&& value) { SetEC2InstanceType(value); return *this;}
+    inline CreateFleetRequest& WithEC2InstanceType(EC2InstanceType&& value) { SetEC2InstanceType(std::move(value)); return *this;}
 
     /**
      * <p>Range of IP addresses and port settings that permit inbound traffic to access
@@ -441,7 +445,7 @@ namespace Model
      * fleet cannot accept connections. You can specify one or more sets of permissions
      * for a fleet.</p>
      */
-    inline void SetEC2InboundPermissions(Aws::Vector<IpPermission>&& value) { m_eC2InboundPermissionsHasBeenSet = true; m_eC2InboundPermissions = value; }
+    inline void SetEC2InboundPermissions(Aws::Vector<IpPermission>&& value) { m_eC2InboundPermissionsHasBeenSet = true; m_eC2InboundPermissions = std::move(value); }
 
     /**
      * <p>Range of IP addresses and port settings that permit inbound traffic to access
@@ -459,7 +463,7 @@ namespace Model
      * fleet cannot accept connections. You can specify one or more sets of permissions
      * for a fleet.</p>
      */
-    inline CreateFleetRequest& WithEC2InboundPermissions(Aws::Vector<IpPermission>&& value) { SetEC2InboundPermissions(value); return *this;}
+    inline CreateFleetRequest& WithEC2InboundPermissions(Aws::Vector<IpPermission>&& value) { SetEC2InboundPermissions(std::move(value)); return *this;}
 
     /**
      * <p>Range of IP addresses and port settings that permit inbound traffic to access
@@ -477,18 +481,18 @@ namespace Model
      * fleet cannot accept connections. You can specify one or more sets of permissions
      * for a fleet.</p>
      */
-    inline CreateFleetRequest& AddEC2InboundPermissions(IpPermission&& value) { m_eC2InboundPermissionsHasBeenSet = true; m_eC2InboundPermissions.push_back(value); return *this; }
+    inline CreateFleetRequest& AddEC2InboundPermissions(IpPermission&& value) { m_eC2InboundPermissionsHasBeenSet = true; m_eC2InboundPermissions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Game session protection policy to apply to all instances in this fleet. If
      * this parameter is not set, instances in this fleet default to no protection. You
      * can change a fleet's protection policy using UpdateFleetAttributes, but this
      * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.</p>
-     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul>
+     * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
+     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
+     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</p> </li> </ul>
      */
     inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
 
@@ -497,11 +501,11 @@ namespace Model
      * this parameter is not set, instances in this fleet default to no protection. You
      * can change a fleet's protection policy using UpdateFleetAttributes, but this
      * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.</p>
-     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul>
+     * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
+     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
+     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</p> </li> </ul>
      */
     inline void SetNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
 
@@ -510,24 +514,24 @@ namespace Model
      * this parameter is not set, instances in this fleet default to no protection. You
      * can change a fleet's protection policy using UpdateFleetAttributes, but this
      * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.</p>
-     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul>
+     * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
+     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
+     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</p> </li> </ul>
      */
-    inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
+    inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = std::move(value); }
 
     /**
      * <p>Game session protection policy to apply to all instances in this fleet. If
      * this parameter is not set, instances in this fleet default to no protection. You
      * can change a fleet's protection policy using UpdateFleetAttributes, but this
      * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.</p>
-     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul>
+     * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
+     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
+     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</p> </li> </ul>
      */
     inline CreateFleetRequest& WithNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
 
@@ -536,13 +540,13 @@ namespace Model
      * this parameter is not set, instances in this fleet default to no protection. You
      * can change a fleet's protection policy using UpdateFleetAttributes, but this
      * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.</p>
-     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul>
+     * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
+     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
+     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</p> </li> </ul>
      */
-    inline CreateFleetRequest& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
+    inline CreateFleetRequest& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(std::move(value)); return *this;}
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.
@@ -550,11 +554,11 @@ namespace Model
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
-     * configuration to maintain on each instance. A <code>CreateFleet</code> request
-     * must include a runtime configuration with at least one server process
-     * configuration; otherwise the request will fail with an invalid request
-     * exception. (This parameter replaces the parameters <code>ServerLaunchPath</code>
-     * and <code>ServerLaunchParameters</code>; requests that contain values for these
+     * configuration to maintain on each instance. A CreateFleet request must include a
+     * runtime configuration with at least one server process configuration; otherwise
+     * the request will fail with an invalid request exception. (This parameter
+     * replaces the parameters <code>ServerLaunchPath</code> and
+     * <code>ServerLaunchParameters</code>; requests that contain values for these
      * parameters instead of a runtime configuration will continue to work.) </p>
      */
     inline const RuntimeConfiguration& GetRuntimeConfiguration() const{ return m_runtimeConfiguration; }
@@ -565,11 +569,11 @@ namespace Model
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
-     * configuration to maintain on each instance. A <code>CreateFleet</code> request
-     * must include a runtime configuration with at least one server process
-     * configuration; otherwise the request will fail with an invalid request
-     * exception. (This parameter replaces the parameters <code>ServerLaunchPath</code>
-     * and <code>ServerLaunchParameters</code>; requests that contain values for these
+     * configuration to maintain on each instance. A CreateFleet request must include a
+     * runtime configuration with at least one server process configuration; otherwise
+     * the request will fail with an invalid request exception. (This parameter
+     * replaces the parameters <code>ServerLaunchPath</code> and
+     * <code>ServerLaunchParameters</code>; requests that contain values for these
      * parameters instead of a runtime configuration will continue to work.) </p>
      */
     inline void SetRuntimeConfiguration(const RuntimeConfiguration& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = value; }
@@ -580,14 +584,14 @@ namespace Model
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
-     * configuration to maintain on each instance. A <code>CreateFleet</code> request
-     * must include a runtime configuration with at least one server process
-     * configuration; otherwise the request will fail with an invalid request
-     * exception. (This parameter replaces the parameters <code>ServerLaunchPath</code>
-     * and <code>ServerLaunchParameters</code>; requests that contain values for these
+     * configuration to maintain on each instance. A CreateFleet request must include a
+     * runtime configuration with at least one server process configuration; otherwise
+     * the request will fail with an invalid request exception. (This parameter
+     * replaces the parameters <code>ServerLaunchPath</code> and
+     * <code>ServerLaunchParameters</code>; requests that contain values for these
      * parameters instead of a runtime configuration will continue to work.) </p>
      */
-    inline void SetRuntimeConfiguration(RuntimeConfiguration&& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = value; }
+    inline void SetRuntimeConfiguration(RuntimeConfiguration&& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = std::move(value); }
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.
@@ -595,11 +599,11 @@ namespace Model
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
-     * configuration to maintain on each instance. A <code>CreateFleet</code> request
-     * must include a runtime configuration with at least one server process
-     * configuration; otherwise the request will fail with an invalid request
-     * exception. (This parameter replaces the parameters <code>ServerLaunchPath</code>
-     * and <code>ServerLaunchParameters</code>; requests that contain values for these
+     * configuration to maintain on each instance. A CreateFleet request must include a
+     * runtime configuration with at least one server process configuration; otherwise
+     * the request will fail with an invalid request exception. (This parameter
+     * replaces the parameters <code>ServerLaunchPath</code> and
+     * <code>ServerLaunchParameters</code>; requests that contain values for these
      * parameters instead of a runtime configuration will continue to work.) </p>
      */
     inline CreateFleetRequest& WithRuntimeConfiguration(const RuntimeConfiguration& value) { SetRuntimeConfiguration(value); return *this;}
@@ -610,14 +614,44 @@ namespace Model
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
-     * configuration to maintain on each instance. A <code>CreateFleet</code> request
-     * must include a runtime configuration with at least one server process
-     * configuration; otherwise the request will fail with an invalid request
-     * exception. (This parameter replaces the parameters <code>ServerLaunchPath</code>
-     * and <code>ServerLaunchParameters</code>; requests that contain values for these
+     * configuration to maintain on each instance. A CreateFleet request must include a
+     * runtime configuration with at least one server process configuration; otherwise
+     * the request will fail with an invalid request exception. (This parameter
+     * replaces the parameters <code>ServerLaunchPath</code> and
+     * <code>ServerLaunchParameters</code>; requests that contain values for these
      * parameters instead of a runtime configuration will continue to work.) </p>
      */
-    inline CreateFleetRequest& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(value); return *this;}
+    inline CreateFleetRequest& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>Policy that limits the number of game sessions an individual player can
+     * create over a span of time for this fleet.</p>
+     */
+    inline const ResourceCreationLimitPolicy& GetResourceCreationLimitPolicy() const{ return m_resourceCreationLimitPolicy; }
+
+    /**
+     * <p>Policy that limits the number of game sessions an individual player can
+     * create over a span of time for this fleet.</p>
+     */
+    inline void SetResourceCreationLimitPolicy(const ResourceCreationLimitPolicy& value) { m_resourceCreationLimitPolicyHasBeenSet = true; m_resourceCreationLimitPolicy = value; }
+
+    /**
+     * <p>Policy that limits the number of game sessions an individual player can
+     * create over a span of time for this fleet.</p>
+     */
+    inline void SetResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { m_resourceCreationLimitPolicyHasBeenSet = true; m_resourceCreationLimitPolicy = std::move(value); }
+
+    /**
+     * <p>Policy that limits the number of game sessions an individual player can
+     * create over a span of time for this fleet.</p>
+     */
+    inline CreateFleetRequest& WithResourceCreationLimitPolicy(const ResourceCreationLimitPolicy& value) { SetResourceCreationLimitPolicy(value); return *this;}
+
+    /**
+     * <p>Policy that limits the number of game sessions an individual player can
+     * create over a span of time for this fleet.</p>
+     */
+    inline CreateFleetRequest& WithResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { SetResourceCreationLimitPolicy(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;
@@ -640,6 +674,8 @@ namespace Model
     bool m_newGameSessionProtectionPolicyHasBeenSet;
     RuntimeConfiguration m_runtimeConfiguration;
     bool m_runtimeConfigurationHasBeenSet;
+    ResourceCreationLimitPolicy m_resourceCreationLimitPolicy;
+    bool m_resourceCreationLimitPolicyHasBeenSet;
   };
 
 } // namespace Model

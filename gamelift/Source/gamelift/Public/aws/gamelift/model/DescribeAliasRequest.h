@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -25,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request action.</p>
+   * <p>Represents the input for a request action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAliasInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API DescribeAliasRequest : public GameLiftRequest
   {
@@ -35,45 +38,46 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
-     * <p>Unique identifier for a fleet alias. Specify the alias you want to retrieve.
-     * </p>
+     * <p>Unique identifier for a fleet alias. Specify the alias you want to
+     * retrieve.</p>
      */
     inline const Aws::String& GetAliasId() const{ return m_aliasId; }
 
     /**
-     * <p>Unique identifier for a fleet alias. Specify the alias you want to retrieve.
-     * </p>
+     * <p>Unique identifier for a fleet alias. Specify the alias you want to
+     * retrieve.</p>
      */
     inline void SetAliasId(const Aws::String& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
 
     /**
-     * <p>Unique identifier for a fleet alias. Specify the alias you want to retrieve.
-     * </p>
+     * <p>Unique identifier for a fleet alias. Specify the alias you want to
+     * retrieve.</p>
      */
-    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
+    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet alias. Specify the alias you want to retrieve.
-     * </p>
+     * <p>Unique identifier for a fleet alias. Specify the alias you want to
+     * retrieve.</p>
      */
     inline void SetAliasId(const char* value) { m_aliasIdHasBeenSet = true; m_aliasId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet alias. Specify the alias you want to retrieve.
-     * </p>
+     * <p>Unique identifier for a fleet alias. Specify the alias you want to
+     * retrieve.</p>
      */
     inline DescribeAliasRequest& WithAliasId(const Aws::String& value) { SetAliasId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet alias. Specify the alias you want to retrieve.
-     * </p>
+     * <p>Unique identifier for a fleet alias. Specify the alias you want to
+     * retrieve.</p>
      */
-    inline DescribeAliasRequest& WithAliasId(Aws::String&& value) { SetAliasId(value); return *this;}
+    inline DescribeAliasRequest& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet alias. Specify the alias you want to retrieve.
-     * </p>
+     * <p>Unique identifier for a fleet alias. Specify the alias you want to
+     * retrieve.</p>
      */
     inline DescribeAliasRequest& WithAliasId(const char* value) { SetAliasId(value); return *this;}
 

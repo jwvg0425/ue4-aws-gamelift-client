@@ -16,6 +16,7 @@
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/cognito-identity/CognitoIdentityRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -25,7 +26,9 @@ namespace Model
 {
 
   /**
-   * Input to the ListIdentityPools action.
+   * <p>Input to the ListIdentityPools action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPoolsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API ListIdentityPoolsRequest : public CognitoIdentityRequest
   {
@@ -35,53 +38,54 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
-     * The maximum number of identities to return.
+     * <p>The maximum number of identities to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * The maximum number of identities to return.
+     * <p>The maximum number of identities to return.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * The maximum number of identities to return.
+     * <p>The maximum number of identities to return.</p>
      */
     inline ListIdentityPoolsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline ListIdentityPoolsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
-    inline ListIdentityPoolsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListIdentityPoolsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline ListIdentityPoolsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

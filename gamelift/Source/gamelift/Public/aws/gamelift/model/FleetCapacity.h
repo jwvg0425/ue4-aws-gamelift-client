@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/EC2InstanceType.h>
 #include <aws/gamelift/model/EC2InstanceCounts.h>
+#include <utility>
 
 namespace Aws
 {
@@ -36,7 +37,9 @@ namespace Model
    * <p>Information about the fleet's capacity. Fleet capacity is measured in EC2
    * instances. By default, new fleets have a capacity of one instance, but can be
    * updated as needed. The maximum number of instances for a fleet is determined by
-   * the fleet's instance type.</p>
+   * the fleet's instance type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetCapacity">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API FleetCapacity
   {
@@ -59,7 +62,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet.</p>
@@ -74,7 +77,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet.</p>
      */
-    inline FleetCapacity& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline FleetCapacity& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet.</p>
@@ -84,9 +87,9 @@ namespace Model
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
      * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. GameLift supports the
-     * following EC2 instance types. See <a
-     * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * including CPU, memory, storage, and networking capacity. Amazon GameLift
+     * supports the following EC2 instance types. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
     inline const EC2InstanceType& GetInstanceType() const{ return m_instanceType; }
@@ -94,9 +97,9 @@ namespace Model
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
      * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. GameLift supports the
-     * following EC2 instance types. See <a
-     * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * including CPU, memory, storage, and networking capacity. Amazon GameLift
+     * supports the following EC2 instance types. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
     inline void SetInstanceType(const EC2InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
@@ -104,19 +107,19 @@ namespace Model
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
      * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. GameLift supports the
-     * following EC2 instance types. See <a
-     * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * including CPU, memory, storage, and networking capacity. Amazon GameLift
+     * supports the following EC2 instance types. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
-    inline void SetInstanceType(EC2InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(EC2InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
      * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. GameLift supports the
-     * following EC2 instance types. See <a
-     * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * including CPU, memory, storage, and networking capacity. Amazon GameLift
+     * supports the following EC2 instance types. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
     inline FleetCapacity& WithInstanceType(const EC2InstanceType& value) { SetInstanceType(value); return *this;}
@@ -124,12 +127,12 @@ namespace Model
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
      * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. GameLift supports the
-     * following EC2 instance types. See <a
-     * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * including CPU, memory, storage, and networking capacity. Amazon GameLift
+     * supports the following EC2 instance types. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
-    inline FleetCapacity& WithInstanceType(EC2InstanceType&& value) { SetInstanceType(value); return *this;}
+    inline FleetCapacity& WithInstanceType(EC2InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>Current status of fleet capacity.</p>
@@ -144,7 +147,7 @@ namespace Model
     /**
      * <p>Current status of fleet capacity.</p>
      */
-    inline void SetInstanceCounts(EC2InstanceCounts&& value) { m_instanceCountsHasBeenSet = true; m_instanceCounts = value; }
+    inline void SetInstanceCounts(EC2InstanceCounts&& value) { m_instanceCountsHasBeenSet = true; m_instanceCounts = std::move(value); }
 
     /**
      * <p>Current status of fleet capacity.</p>
@@ -154,7 +157,7 @@ namespace Model
     /**
      * <p>Current status of fleet capacity.</p>
      */
-    inline FleetCapacity& WithInstanceCounts(EC2InstanceCounts&& value) { SetInstanceCounts(value); return *this;}
+    inline FleetCapacity& WithInstanceCounts(EC2InstanceCounts&& value) { SetInstanceCounts(std::move(value)); return *this;}
 
   private:
     Aws::String m_fleetId;

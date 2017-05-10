@@ -16,7 +16,7 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
-#include <aws/core/utils/AwsArray.h>
+#include <aws/core/utils/Array.h>
 #include <memory>
 
 namespace Aws
@@ -108,7 +108,7 @@ namespace Aws
             /**
              * Create AES in Key Wrap mode off of a 256 bit key.
              */
-            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_KeyWrapImplementation(const CryptoBuffer& key);
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_KeyWrapImplementation(const CryptoBuffer& key);   
 
             /**
              * Create SecureRandomBytes instance

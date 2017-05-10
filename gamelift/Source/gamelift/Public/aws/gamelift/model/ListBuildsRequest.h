@@ -17,6 +17,7 @@
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/gamelift/model/BuildStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -26,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request action.</p>
+   * <p>Represents the input for a request action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuildsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API ListBuildsRequest : public GameLiftRequest
   {
@@ -36,65 +39,71 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Build status to filter results by. To retrieve all builds, leave this
-     * parameter empty.</p> <p>Possible build statuses include the following:</p>
-     * <ul><li><b>INITIALIZED</b> – A new build has been defined, but no files have
+     * parameter empty.</p> <p>Possible build statuses include the following:</p> <ul>
+     * <li> <p> <b>INITIALIZED</b> – A new build has been defined, but no files have
      * been uploaded. You cannot create fleets for builds that are in this status. When
-     * a build is successfully created, the build status is set to this value.
-     * </li><li><b>READY</b> – The game build has been successfully uploaded. You can
-     * now create new fleets for this build.</li><li><b>FAILED</b> – The game build
-     * upload failed. You cannot create new fleets for this build. </li></ul>
+     * a build is successfully created, the build status is set to this value. </p>
+     * </li> <li> <p> <b>READY</b> – The game build has been successfully uploaded. You
+     * can now create new fleets for this build.</p> </li> <li> <p> <b>FAILED</b> – The
+     * game build upload failed. You cannot create new fleets for this build. </p>
+     * </li> </ul>
      */
     inline const BuildStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>Build status to filter results by. To retrieve all builds, leave this
-     * parameter empty.</p> <p>Possible build statuses include the following:</p>
-     * <ul><li><b>INITIALIZED</b> – A new build has been defined, but no files have
+     * parameter empty.</p> <p>Possible build statuses include the following:</p> <ul>
+     * <li> <p> <b>INITIALIZED</b> – A new build has been defined, but no files have
      * been uploaded. You cannot create fleets for builds that are in this status. When
-     * a build is successfully created, the build status is set to this value.
-     * </li><li><b>READY</b> – The game build has been successfully uploaded. You can
-     * now create new fleets for this build.</li><li><b>FAILED</b> – The game build
-     * upload failed. You cannot create new fleets for this build. </li></ul>
+     * a build is successfully created, the build status is set to this value. </p>
+     * </li> <li> <p> <b>READY</b> – The game build has been successfully uploaded. You
+     * can now create new fleets for this build.</p> </li> <li> <p> <b>FAILED</b> – The
+     * game build upload failed. You cannot create new fleets for this build. </p>
+     * </li> </ul>
      */
     inline void SetStatus(const BuildStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>Build status to filter results by. To retrieve all builds, leave this
-     * parameter empty.</p> <p>Possible build statuses include the following:</p>
-     * <ul><li><b>INITIALIZED</b> – A new build has been defined, but no files have
+     * parameter empty.</p> <p>Possible build statuses include the following:</p> <ul>
+     * <li> <p> <b>INITIALIZED</b> – A new build has been defined, but no files have
      * been uploaded. You cannot create fleets for builds that are in this status. When
-     * a build is successfully created, the build status is set to this value.
-     * </li><li><b>READY</b> – The game build has been successfully uploaded. You can
-     * now create new fleets for this build.</li><li><b>FAILED</b> – The game build
-     * upload failed. You cannot create new fleets for this build. </li></ul>
+     * a build is successfully created, the build status is set to this value. </p>
+     * </li> <li> <p> <b>READY</b> – The game build has been successfully uploaded. You
+     * can now create new fleets for this build.</p> </li> <li> <p> <b>FAILED</b> – The
+     * game build upload failed. You cannot create new fleets for this build. </p>
+     * </li> </ul>
      */
-    inline void SetStatus(BuildStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(BuildStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Build status to filter results by. To retrieve all builds, leave this
-     * parameter empty.</p> <p>Possible build statuses include the following:</p>
-     * <ul><li><b>INITIALIZED</b> – A new build has been defined, but no files have
+     * parameter empty.</p> <p>Possible build statuses include the following:</p> <ul>
+     * <li> <p> <b>INITIALIZED</b> – A new build has been defined, but no files have
      * been uploaded. You cannot create fleets for builds that are in this status. When
-     * a build is successfully created, the build status is set to this value.
-     * </li><li><b>READY</b> – The game build has been successfully uploaded. You can
-     * now create new fleets for this build.</li><li><b>FAILED</b> – The game build
-     * upload failed. You cannot create new fleets for this build. </li></ul>
+     * a build is successfully created, the build status is set to this value. </p>
+     * </li> <li> <p> <b>READY</b> – The game build has been successfully uploaded. You
+     * can now create new fleets for this build.</p> </li> <li> <p> <b>FAILED</b> – The
+     * game build upload failed. You cannot create new fleets for this build. </p>
+     * </li> </ul>
      */
     inline ListBuildsRequest& WithStatus(const BuildStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>Build status to filter results by. To retrieve all builds, leave this
-     * parameter empty.</p> <p>Possible build statuses include the following:</p>
-     * <ul><li><b>INITIALIZED</b> – A new build has been defined, but no files have
+     * parameter empty.</p> <p>Possible build statuses include the following:</p> <ul>
+     * <li> <p> <b>INITIALIZED</b> – A new build has been defined, but no files have
      * been uploaded. You cannot create fleets for builds that are in this status. When
-     * a build is successfully created, the build status is set to this value.
-     * </li><li><b>READY</b> – The game build has been successfully uploaded. You can
-     * now create new fleets for this build.</li><li><b>FAILED</b> – The game build
-     * upload failed. You cannot create new fleets for this build. </li></ul>
+     * a build is successfully created, the build status is set to this value. </p>
+     * </li> <li> <p> <b>READY</b> – The game build has been successfully uploaded. You
+     * can now create new fleets for this build.</p> </li> <li> <p> <b>FAILED</b> – The
+     * game build upload failed. You cannot create new fleets for this build. </p>
+     * </li> </ul>
      */
-    inline ListBuildsRequest& WithStatus(BuildStatus&& value) { SetStatus(value); return *this;}
+    inline ListBuildsRequest& WithStatus(BuildStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Maximum number of results to return. Use this parameter with
@@ -115,51 +124,51 @@ namespace Model
     inline ListBuildsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
     inline ListBuildsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
-    inline ListBuildsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListBuildsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
     inline ListBuildsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

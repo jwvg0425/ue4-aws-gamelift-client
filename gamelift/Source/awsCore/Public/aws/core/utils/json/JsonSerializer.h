@@ -17,7 +17,7 @@
 
 #include <aws/core/Core_EXPORTS.h>
 
-#include <aws/core/utils/AwsArray.h>
+#include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/external/json-cpp/json.h>

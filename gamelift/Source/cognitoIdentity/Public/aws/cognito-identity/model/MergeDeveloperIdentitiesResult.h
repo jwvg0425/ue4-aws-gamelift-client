@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -34,7 +35,9 @@ namespace Model
 {
   /**
    * <p>Returned in response to a successful <code>MergeDeveloperIdentities</code>
-   * action.</p>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentitiesResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API MergeDeveloperIdentitiesResult
   {
@@ -56,7 +59,7 @@ namespace Model
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
-    inline void SetIdentityId(Aws::String&& value) { m_identityId = value; }
+    inline void SetIdentityId(Aws::String&& value) { m_identityId = std::move(value); }
 
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
@@ -71,7 +74,7 @@ namespace Model
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
-    inline MergeDeveloperIdentitiesResult& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
+    inline MergeDeveloperIdentitiesResult& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
